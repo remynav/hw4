@@ -55,6 +55,36 @@ void test5(const char* msg)
   cout << msg << ": " <<   equalPaths(a) << endl;
 }
 
+void test6(const char* msg){
+  //empty test
+  cout << msg << ": " << equalPaths(NULL) << endl;
+  //expects 1
+}
+
+void test7(const char* msg){
+  setNode(a,1,NULL,NULL);
+  setNode(b,2,a,NULL);
+  setNode(c,3,b,NULL);
+  setNode(d,4,c,NULL);
+  cout << msg << ": " <<   equalPaths(a) << endl;
+  //expects 1
+}
+
+void test8(const char* msg){
+  setNode(b,2,NULL,NULL);
+  setNode(d,4,NULL,NULL);
+  setNode(c,3,NULL,d);
+  setNode(a,1,b,c);
+  cout << msg << ": " <<   equalPaths(a) << endl;
+}
+
+void test9(const char* msg){
+  setNode(a,1,b,NULL);
+  setNode(b,2,NULL,c);
+  setNode(c,3,NULL,NULL);
+  cout << msg << ": " <<   equalPaths(a) << endl;
+}
+
 int main()
 {
   a = new Node(1);
@@ -67,6 +97,10 @@ int main()
   test3("Test3");
   test4("Test4");
   test5("Test5");
+  test6("Tests Empty");
+  test7("Tests lopsided");
+  test8("Tests unequal depth");
+  test9("Test9");
  
   delete a;
   delete b;
