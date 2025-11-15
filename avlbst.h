@@ -333,22 +333,7 @@ void AVLTree<Key, Value>::insertFix(AVLNode<Key, Value>* parent, AVLNode<Key, Va
       break;
     }
 
-    //right heavy
-
-    /*
-      //see if zig zig - LR or zig zag - LL
-      if(p->getKey() < leftChild->getKey()){
-        //LL
-        rotateRight(parent);
-      }
-      else{
-        //LR
-        rotateLeft(leftChild);
-        rotateRight(parent);
-      }
-      break;
-    }
-    */
+    
 
     //right heavy
     else if(balance < -1){
@@ -368,19 +353,7 @@ void AVLTree<Key, Value>::insertFix(AVLNode<Key, Value>* parent, AVLNode<Key, Va
       break;
     }
 
-    /*
-      if(p->getKey() > rightChild->getKey()){
-        //RR
-        rotateLeft(parent);
-      }
-      else{
-        //RL
-        rotateRight(rightChild);
-        rotateLeft(parent);
-      }
-      break;
-    }
-    */
+    
     if(balance == 0){
       break;
     }
